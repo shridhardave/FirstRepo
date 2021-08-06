@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+apply plugin: "java"
+description = "Gradle Command Line Arguments examples"
+
+task propertyTypes(){
+    doLast{
+        if (project.hasProperty("args")) {
+            println "Hello "+project.getProperty("args")+"!"
+        }
+        else
+        {println "Hello World!"}
+
+    }
+}
